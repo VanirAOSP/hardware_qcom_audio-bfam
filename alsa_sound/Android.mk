@@ -34,7 +34,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_ARM_MODE := arm
-LOCAL_CFLAGS := -D_POSIX_SOURCE
+LOCAL_CFLAGS := -D_POSIX_SOURCE -fno-strict-aliasing -Wno-error=strict-aliasing
 ifneq ($(strip $(QCOM_AUDIO_FEATURE_DISABLED_ACDB)),true)
     LOCAL_CFLAGS += -DQCOM_ACDB_ENABLED
 endif
